@@ -6,6 +6,7 @@ import seaborn as sns
 from numpy.linalg import inv
 from scipy.stats import multivariate_normal as mvn
 
+# Gaussian prior parameters
 K = 4
 precision_scalar_prior = 10
 prior_cov = np.identity(K)
@@ -22,8 +23,11 @@ likelihood_cov = inv(likelihood_pre)
 print "Assuming diagonal precision matrix for gaussian likelihood w/ scalar = " + str(precision_scalar)
 
 
-# setup figure
 def generate_gaussian_4d():
+    '''
+    Calculates and generates samples from the posterior over the mean of a 4-D Gaussian for BBVI testing
+    :return:
+    '''
     fig1, ax1 = plt.subplots(nrows=1,ncols=1)
     num_samples = 200
 
@@ -59,10 +63,19 @@ def generate_gaussian_4d():
     return posterior_mu, posterior_cov, y
 
 def qgrad(z, lam, precision):
+    '''
+    The gradient of the variational distribution. Modify this when changing the variational distribution you wish to
+    update with.
+    :return:
+    '''
     qgrad = precision.dot((z - lam))
     return qgrad
 
 def log_joint(y, z, lam, prior_cov, likelihood_cov):
+    '''
+    The log joint distribution of the model.
+    :return:
+    '''
     plog_prior = mvn.logpdf(z, lam.T, prior_cov)
     plog_likelihood = 0
     for ii in xrange(len(y)):
@@ -73,6 +86,10 @@ def log_joint(y, z, lam, prior_cov, likelihood_cov):
 
 
 def bbvi_mccv_gaussian(lam=None, lam_true=None, adagrad=True, mccv=True):
+    '''
+    Runs BBVI for the Gaussian. Has switches for AdaGrad and MCCV.
+    :return:
+    '''
     lam_old = lam.copy()
     # Set the difference to a large fixed value
     max_iter = 100
@@ -137,7 +154,7 @@ def bbvi_mccv_gaussian(lam=None, lam_true=None, adagrad=True, mccv=True):
 
 
 if __name__ == "__main__":
-    # generate gaussian 2d data
+    # generate gaussian 4d data
     print "Generating 4-D Gaussian Samples"
     posterior_mu, posterior_cov, y = generate_gaussian_4d()
 
