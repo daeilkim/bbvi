@@ -14,9 +14,7 @@ Scipy
 
 ## Running this Code
 To run simply type:
-'''
-python bbvi_simple.py
-'''
+`python bbvi_simple.py`
 
 ## Plots Generated
 bbvi_gaussian_samples.png - A scatter plot of the first two dimensions for the prior / likelihood / posterior. 
