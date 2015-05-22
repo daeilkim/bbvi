@@ -21,5 +21,5 @@ bbvi_gaussian_samples.png - A scatter plot of the first two dimensions for the p
 bbvi_gaussian.png - A facet plot that shows the sample paths for the various implementations of BBVI where the learning rate 
 can be either Robbins-Monroe or AdaGrad and whether Markov Control Variates are used. The diagonal plots represent a histogram of the samples collected from every iteration of BBVI where the yellow represents the true value (made slightly larger for visibility).
 
-![alt tag](https://github.com/daeilkim/bbvi/bbvi_gaussian_samples.png)
-![alt tag](https://github.com/daeilkim/bbvi/bbvi_gaussian.png)
+![alt tag](https://github.com/daeilkim/bbvi/blob/master/bbvi_gaussian_samples.png)
+![alt tag](https://github.com/daeilkim/bbvi/blob/master/bbvi_gaussian.png)
