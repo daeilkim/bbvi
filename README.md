@@ -8,4 +8,4 @@ as the log joint probability of the model.
 ## Plots Generated
 bbvi_gaussian_samples.png - A scatter plot of the first two dimensions for the prior / likelihood / posterior. 
 bbvi_gaussian.png - A facet plot that shows the sample paths for the various implementations of BBVI where the learning rate 
-can be either Robbins-Monroe or AdaGrad and whether Markov Control Variates are used.
+can be either Robbins-Monroe or AdaGrad and whether Markov Control Variates are used. The diagonal plots represent a histogram of the samples collected from every iteration of BBVI where the yellow represents the true value (made slightly larger for visibility).
