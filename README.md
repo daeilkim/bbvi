@@ -5,6 +5,19 @@ needed to control the variance of the estimator. It should be in theory easy to 
 by replacing the gradient of the variational distribution (the Gaussian) with your distribution of choice as well
 as the log joint probability of the model. 
 
+## Package Requirements
+Pandas
+Numpy
+Matplotlib
+Seaborn
+Scipy
+
+## Running this Code
+To run simply type:
+'''
+python bbvi_simple.py
+'''
+
 ## Plots Generated
 bbvi_gaussian_samples.png - A scatter plot of the first two dimensions for the prior / likelihood / posterior. 
 bbvi_gaussian.png - A facet plot that shows the sample paths for the various implementations of BBVI where the learning rate 
